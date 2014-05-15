@@ -1,0 +1,217 @@
+.textoTurquesa{
+    color: #41B19C;
+}
+
+.textoBlanco{
+    color: #FFFFFF;
+    padding-top: 20px;
+}
+
+.fondo{
+    float:left;
+    width: 70%;
+    height: 100%;
+}
+
+.seccionActual{
+    color: red;
+    font-style: Italic;
+}
+
+.tituloBarra{
+    font-family: 'Abel', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #41B19C;
+}
+
+.tituloBarra a{
+    color: #41B19C;
+}
+
+/*CSS pagina principal*/
+
+.panelPrincipal{
+    color:white;
+    width:65%;
+    margin-left:25%;
+}
+
+.panelPrincipal h1,p{
+    padding-left: 5%;
+}
+
+.panelPrincipal h1{
+    padding-top: 1%;
+}
+
+.panelPrincipal p{
+    padding-bottom: 2%;
+}
+
+/*CSS caramelos blandos*/
+
+.fondoGamaPropia{
+    width: 12%;
+    margin-left: 3%;
+}
+
+.fondoGamaPropia p.gamaPropia{
+    background-color: #E32D28;
+    font-size: 18px;
+    color:white;
+    font: bold;
+    text-align:center;
+    padding-top: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 10px;
+}
+
+.fondoToffees{
+    margin-left: 5%;
+    width:37%;
+}
+
+.fondoMasticables{
+    width:37%;
+    margin-left:4%;
+    float:left;
+}
+
+.fondoGamaPropia p{
+    text-align: left;
+    font:bold;
+    font-size: 12px;
+    padding-left:15%;
+}
+
+.fondoGamaPropia p b{
+
+}
+
+.fondoTurquesa{
+    background-color: #41B19C;
+}
+
+.titulo3{
+    display: block;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.imagenPrincipal{
+    display:block;
+    margin-left:5%;
+    float:left;
+    width: 60%;
+    height: 55%;
+    margin-bottom:3%
+}
+
+.imagenPrincipal img{
+    height: 64%;
+}
+
+.imagenSecundaria{
+    margin-bottom: 3%;
+    display:inline-block;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 26%;
+    height: 10%;
+    float:left;
+}
+
+.imagenSecundaria img{
+    height: 20%;
+    width: 100%;
+}
+
+.divLogos{
+    float:left;
+    width:100%;
+    height: 60%;
+    margin-bottom: 2%;
+}
+
+.divLogoBarraPrincipal{
+    float:left;
+    height: 35%;
+    width: 18%;
+    margin-left: 4%;
+}
+
+.divLogoBarraPrincipal img{
+    width: 100%;
+    height: 12%;
+}
+
+.divLogoEmpresa{
+    height: 25%;
+    width: 25%;
+    float:left;
+}
+
+.divLogoEmpresa img{
+    height: 35%;
+}
+
+.divLogoGamaPropia img{
+    height: 15%;
+}
+
+.divLogoPublicitarios{
+    margin-top: 0%;
+}
+
+.divLogoPublicitarios img{
+    height: 13%;
+}
+
+.divLogoNosotros{
+    margin-top:1%;
+}
+
+.divLogoNosotros img{
+    height:11.5%;
+}
+
+.divLogoContacto{
+    margin-top:1%;
+}
+
+.divLogoContacto img{
+    height:12%;
+}
+
+.divLogoCarrito{
+    margin-top:1%;
+    width:7%;
+    height:10%;
+}
+
+.divLogoCarrito img{
+    height: 10%;
+}
+
+.logoSocial{
+    width: 50px;
+    height: 50px;
+}
+
+.divLogosMenu{
+    bottom: 0%;
+    float:left;
+    width:75%;
+    margin-top:7%;
+}
+
+.divRedesSociales{
+    float:left;
+}
+
+.footer{
+    clear: both;
+    margin-top:5%;
+}
