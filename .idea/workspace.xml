@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ae5ddd2-f5ad-4894-acd3-7b4a4f6bb145" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="psi7.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,7 +67,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="20" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.74647886" vertical-offset="307" max-vertical-offset="918">
+            <state line="47" column="12" selection-start="2427" selection-end="2427" vertical-scroll-proportion="0.86619717" vertical-offset="307" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -626,7 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="20" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.74647886" vertical-offset="307" max-vertical-offset="918">
+        <state line="47" column="12" selection-start="2427" selection-end="2427" vertical-scroll-proportion="0.86619717" vertical-offset="307" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
