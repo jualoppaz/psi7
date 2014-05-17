@@ -4,8 +4,6 @@ function mainController($scope, $http) {
     $scope.datos = {};
 
     $scope.subirClaves = function(){
-        window.alert("Paso x el js");
-
         var hayErrores = false;
         var $usuario = $("#usuario");
 
