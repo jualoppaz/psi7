@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ae5ddd2-f5ad-4894-acd3-7b4a4f6bb145" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\usuario\Desktop\WS\WSAngularNode\psi7\public\images\logo.png" afterPath="$PROJECT_DIR$/public/images/favicon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-gyp/node_modules/request/node_modules/form-data/package.json" afterPath="$PROJECT_DIR$/node_modules/node-gyp/node_modules/request/node_modules/form-data/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-gyp/node_modules/request/node_modules/hawk/package.json" afterPath="$PROJECT_DIR$/node_modules/node-gyp/node_modules/request/node_modules/hawk/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="psi7.iws" />
@@ -34,7 +31,7 @@
       <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="6" selection-start="3021" selection-end="3021" vertical-scroll-proportion="2.7211704" vertical-offset="51" max-vertical-offset="3111">
+            <state line="33" column="6" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.8777969" vertical-offset="51" max-vertical-offset="3111">
               <folding />
             </state>
           </provider>
@@ -92,13 +89,13 @@
         <option value="$PROJECT_DIR$/public/css/jmlp.css" />
         <option value="$PROJECT_DIR$/public/application.html" />
         <option value="$PROJECT_DIR$/public/js/firma.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/js/verificacion.js" />
         <option value="$PROJECT_DIR$/public/js/generacionDeClaves.js" />
         <option value="$PROJECT_DIR$/public/generacionDeClaves.html" />
         <option value="$PROJECT_DIR$/public/verificacion.html" />
         <option value="$PROJECT_DIR$/public/firma.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -700,7 +697,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="6" selection-start="3021" selection-end="3021" vertical-scroll-proportion="2.7211704" vertical-offset="51" max-vertical-offset="3111">
+        <state line="33" column="6" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.8777969" vertical-offset="51" max-vertical-offset="3111">
           <folding />
         </state>
       </provider>
