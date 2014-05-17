@@ -31,7 +31,7 @@ app.configure(function() {
 	app.use(express.methodOverride());					// Simula DELETE y PUT
     app.use('/public/css', express.static(__dirname + '/public/css'));
     app.use('/public/js', express.static(__dirname + '/public/js'));
-    app.use(express.favicon(path.join(__dirname, '/public/images/logo.png')));
+    app.use(express.favicon(path.join(__dirname, '/public/images/favicon.png')));
 });
 
 app.get('/aplicacion', function(req, res) {
