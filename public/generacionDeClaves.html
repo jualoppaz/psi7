@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="datos">
+    <head>
+        <meta charset="utf-8">
+        <title>Aplicacion</title>
+
+        <link rel="stylesheet" href="./public/css/bootstrap.css">
+        <link rel="stylesheet" href="./public/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="./public/css/jmlp.css">
+    </head>
+    <body ng-controller="mainController">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">Practica 7</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/generacionDeClaves.html">Generaci&oacute;n de claves</a></li>
+                        <li><a href="/firma.html">Firma</a></li>
+                        <li><a href="/verificacion.html">Verificaci&oacute;n</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container containerApp">
+            <div class="col-md-12">
+                <h1 class="title">Generaci&oacute;n de claves</h1>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div id="errorTamanoClave" class="alert alert-danger space" style="display: none">Debe seleccionar un tamaño de clave</div>
+                        <label for="tamanoClave" class="lead col-md-3 control-label" >Tamaño de clave: </label>
+                        <div class="col-md-4" style="margin-bottom:2%;">
+                            <select id="tamanoClave" name="tamanoClave" class="form-control">
+                                <option value="#">Seleccione un tamaño</option>
+                                <option value="512">512</option>
+                                <option value="1024">1024</option>
+                                <option value="2048">2048</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 generate-button-group">
+                            <a id="generate-btn" type="button" class="btn btn-success">Generar</a>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <label class="lead col-md-4 control-label" for="privada">Clave privada: </label>
+                        <label class="lead col-md-4 control-label" for="publica">Clave p&uacute;blica: </label>
+                        <div class="col-md-4 space">
+                            <textarea name="privadaAux" id="privadaAux" type="text" class="form-control" rows="10" readonly></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <textarea name="publicaAux" id="publicaAux" type="text" class="form-control" rows="10" readonly></textarea>
+                        </div>
+                        <label class="lead col-md-4 control-label" for="privada">Copie la clave privada: </label>
+                        <label class="lead col-md-4 control-label" for="publica">Copie la clave p&uacute;blica: </label>
+                        <div class="col-md-4 space" style="margin-top:1%;">
+                            <textarea ng-model="datos.clavePrivada" name="privada" id="privada" type="text" class="form-control" rows="10"></textarea>
+                        </div>
+                        <div class="col-md-4" style="margin-top:1%;">
+                            <textarea ng-model="datos.clavePublica" name="publica" id="publica" type="text" class="form-control" rows="10"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div id="errorUsuario" class="alert alert-danger" style="display:none">Debe introducir un usuario.</div>
+                        <div id="errorUsuarioYaExiste" class="alert alert-danger" style="display:none">Este usuario ya existe. Debe introducir otro usuario.</div>
+                        <div id="subidaOK" class="alert alert-success" style="display:none">Sus claves han sido registradas correctamente.</div>
+                        <label class="lead col-md-4 control-label" for="usuario">Introduzca un identificador para almacenar la clave: </label>
+                        <div class="col-md-5" style="margin-top: 1%;">
+                            <div class="col-md-4">
+                                <input ng-model="datos.usuario" name="usuario" id="usuario" type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-2 upload-btn">
+                                <button id="upload-btn" type="button" class="btn btn-success" ng-click="subirClaves()">Subir</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script type="text/javascript" src="./public/js/aplicacion.js"></script>
+        <script type="text/javascript" src="./public/js/generacionDeClaves.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/jsrsasign-latest-all-min.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsapem-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsasign-1.2.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/asn1hex-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/x509-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/crypto-1.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            $().ready(function () {
+                var $clavePrivada     = $("#edad");
+                var $clavePublica     = $("#publica");
+                var $tamanoClave      = $("#tamanoClave");
+                var $errorTamanoClave = $("#errorTamanoClave");
+
+                $(".generate-button-group .btn").click(function (e) {
+                    var tamanoClave = $tamanoClave.val();
+                    if(tamanoClave == "#"){
+                        $errorTamanoClave.show();
+                    }else{
+                        $errorTamanoClave.hide();
+                    }
+                    if (/*algoritmo != "#" && */tamanoClave != "#"){
+                        var claves = generarClave(tamanoClave);
+                        $("#privadaAux").val(claves.privateKey);
+                        $("#publicaAux").val(claves.publicKey);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

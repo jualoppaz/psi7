@@ -1,0 +1,35 @@
+{
+  "name": "psi7",
+  "version": "0.0.1",
+  "description": "Tu aplicacion para la firma digital.",
+  "main": "server.js",
+  "author": "Juan Manuel Lopez Pazos <juanmalp1992@gmail.com>",
+  "dependencies": {
+    "express": "~3.4.4",
+    "mongoose": "^3.6.20",
+    "mongodb": "^1.3.23",
+    "url": "^0.7.9",
+	"jsrsasign": "0.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jualoppaz/psi7.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/jualoppaz/psi7/issues"
+  },
+  "homepage": "https://github.com/jualoppaz/psi7",
+  "devDependencies": {},
+  "keywords": [
+    "psi7",
+    "firma",
+    "digital"
+  ],
+  "engines": {
+    "node": "0.10.x"
+  }
+}

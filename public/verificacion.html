@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="datos">
+    <head>
+        <meta charset="utf-8">
+        <title>Aplicacion</title>
+
+        <link rel="stylesheet" href="./public/css/bootstrap.css">
+        <link rel="stylesheet" href="./public/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="./public/css/jmlp.css">
+    </head>
+    <body ng-controller="mainController">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">Practica 7</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/generacionDeClaves.html">Generaci&oacute;n de claves</a></li>
+                        <li><a href="/firma.html">Firma</a></li>
+                        <li class="active"><a href="/verificacion.html">Verificaci&oacute;n</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container containerApp">
+            <div class="col-md-12">
+                <h1 class="title">Verificaci&oacute;n</h1>
+                <div id="firmaOK" class="alert alert-success" style="display:none">Firma verificada correctamente</div>
+                <div id="firmaFAIL" class="alert alert-danger" style="display:none">Firma incorrecta</div>
+                <div id="unknownUser" class="alert alert-danger" style="display:none">El usuario no existe</div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="algoritmo" class="lead col-md-3 control-label">Algoritmo de hashing usado: </label>
+                        <div class="col-md-4" style="margin-bottom:2%;">
+                            <select id="algoritmo" name="algoritmo" class="form-control">
+                                <option value="#">Seleccione un algoritmo</option>
+                                <option value="SHA1withRSA">SHA1withRSA</option>
+                                <option value="SHA224withRSA">SHA224withRSA</option>
+                                <option value="SHA256withRSA">SHA256withRSA</option>
+                                <option value="SHA384withRSA">SHA384withRSA</option>
+                                <option value="SHA512withRSA">SHA512withRSA</option>
+                                <option value="MD5withRSA">MD5withRSA</option>
+                                <option value="RIPEMD160withRSA">RIPEMD160withRSA</option>
+                            </select>
+                        </div>
+                        <div id="errorHashing" class="alert alert-danger space" style="display: none">Debe seleccionar un algoritmo de hashing</div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <!--
+                        <label class="lead col-md-3-4" style="color: green; text-decoration: underline;">Con usuario</label>
+                        -->
+                        <div id="errorUsuario" class="alert alert-danger space" style="display:none;">Debe introducir su usuario</div>
+                        <div id="errorMensaje1" class="alert alert-danger space" style="display:none;">Debe introducir el mensaje</div>
+                        <div id="errorFirma1" class="alert alert-danger space" style="display:none;">Debe introducir la firma del mensaje</div>
+                        <label for="usuario" class="lead col-md-3-4 control-label space">Usuario: </label>
+                        <label for="mensaje1" class="lead col-md-3-4 control-label">Mensaje: </label>
+                        <label for="firma1" class="lead col-md-3-4 control-label">Firma: </label>
+                        <div class="col-md-3-4 space">
+                            <input ng-model="usuario" class="form-control" name="usuario" id="usuario" placeholder="Introduzca su usuario"
+                                   required="required"/>
+                            <button ng-click="verificarConUsuario();" id="verify-btn-1" type="button" class="btn btn-success"
+                                    style="margin-top: 10%; margin-left: 30%; margin-bottom: 3%;">Verificar firma</button>
+                            <!--<label id="errorUsuario" class="space" style="display: none; color:red;">Debe introducir un usuario</label>
+                            <label id="errorMensaje1" class="" style="display: none; color:red;">Debe introducir un mensaje</label>
+                            <label id="errorFirma1" class="" style="display: none; color:red;">Debe introducir la firma del mensaje</label>-->
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea ng-model="mensaje1" class="form-control" name="mensaje1" id="mensaje1" rows="10"
+                                      placeholder="Introduzca el mensaje a firmar" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea ng-model="firma1" class="form-control" name="firma1" id="firma1" rows="10"
+                                    placeholder="Introduzca la firma del mensaje"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <!--
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <label class="lead col-md-3-4" style="color: red; text-decoration: underline;">Sin usuario</label>
+                        <div id="errorClavePublica" class="alert alert-danger space" style="display:none;">Debe introducir la clave p&uacute;blica</div>
+                        <div id="errorMensaje2" class="alert alert-danger space" style="display:none;">Debe introducir el mensaje</div>
+                        <div id="errorFirma2" class="alert alert-danger space" style="display:none;">Debe introducir la firma del mensaje</div>
+                        <label for="clavePublica" class="lead col-md-3-4 control-label space">Clave p&uacute;blica: </label>
+                        <label for="mensaje2" class="lead col-md-3-4 control-label">Mensaje: </label>
+                        <label for="firma2" class="lead col-md-3-4 control-label">Firma: </label>
+                        <div class="col-md-3-4 space">
+                            <textarea ng-model="datos.clavePublica" class="form-control" name="clavePublica" id="clavePublica" rows="10"
+                                      placeholder="Introduzca la clave publica" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea ng-model="datos.mensaje2" class="form-control" name="mensaje2" id="mensaje2" rows="10"
+                                      placeholder="Introduzca el mensaje asociado a la firma" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea ng-model="datos.firma2" class="form-control" name="firma2" id="firma2" rows="10"
+                                    placeholder="Introduzca la firma a verificar"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-5 copy-btn">
+                            <button ng-click="verificarSinUsuario();" id="verify-btn-2" type="button" class="btn btn-success">Verificar firma</button>
+                        </div>
+                    </div>
+                </form>
+                -->
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script type="text/javascript" src="./public/js/verificacion.js"></script>
+        <script type="text/javascript" src="./public/js/aplicacion.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/jsrsasign-latest-all-min.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsapem-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsasign-1.2.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/asn1hex-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/x509-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/crypto-1.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="datos">
+    <head>
+        <meta charset="utf-8">
+        <title>Aplicacion</title>
+
+        <link rel="stylesheet" href="./public/css/bootstrap.css">
+        <link rel="stylesheet" href="./public/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="./public/css/jmlp.css">
+    </head>
+    <body ng-controller="mainController">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">Practica 7</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/generacionDeClaves.html">Generaci&oacute;n de claves</a></li>
+                        <li class="active"><a href="/firma.html">Firma</a></li>
+                        <li><a href="/verificacion.html">Verificaci&oacute;n</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container containerApp">
+            <div class="col-md-12">
+                <h1 class="title">Firma</h1>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div id="errorHashing" class="alert alert-danger" style="display: none">Debe seleccionar un algoritmo de hashing.</div>
+                        <label for="algoritmo" class="lead col-md-3 control-label">Algoritmo de hashing: </label>
+                        <div class="col-md-4">
+                            <select id="algoritmo" name="algoritmo" class="form-control">
+                                <option value="#">Seleccione un algoritmo</option>
+                                <option value="SHA1withRSA">SHA1withRSA</option>
+                                <option value="SHA224withRSA">SHA224withRSA</option>
+                                <option value="SHA256withRSA">SHA256withRSA</option>
+                                <option value="SHA384withRSA">SHA384withRSA</option>
+                                <option value="SHA512withRSA">SHA512withRSA</option>
+                                <option value="MD5withRSA">MD5withRSA</option>
+                                <option value="RIPEMD160withRSA">RIPEMD160withRSA</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <div id="errorUsuario" class="alert alert-danger" style="display:none">Debe introducir un usuario.</div>
+                        <label for="clavePrivadaFirma" class="lead col-md-5 control-label">Consultar clave privada mediante usuario: </label>
+                        <div class="col-md-3-4">
+                            <input ng-model="usuario" name="usuario" id="usuario" type="text" class="form-control"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button id="query-key-btn" type="button" class="btn btn-success" ng-click="consultarClave();">Consultar clave</button>
+                        </div>
+                        <div class="col-md-3-4 space">
+                            <textarea class="form-control" name="clavePrivadaConsultada"
+                                      id="clavePrivadaConsultada" rows="10" style="display:none" readonly>{{datos.clavePrivada}}</textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <div id="errorClavePrivada" class="alert alert-danger" style="display:none">Debe introducir su clave privada.</div>
+                        <div id="errorMensaje" class="alert alert-danger" style="display:none">Debe introducir su mensaje.</div>
+                        <label for="clavePrivadaFirma" class="lead col-md-3-4 control-label">Clave privada: </label>
+                        <label for="mensaje" class="lead col-md-3-4 control-label">Mensaje: </label>
+                        <label for="firma" class="lead col-md-3-4 control-label">Firma: </label>
+                        <div class="col-md-3-4 space">
+                            <textarea class="form-control" name="clavePrivadaFirma" id="clavePrivadaFirma" rows="10"
+                                      placeholder="Introduzca la clave privada" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea class="form-control" name="mensaje" id="mensaje" rows="10"
+                                      placeholder="Introduzca el mensaje a firmar" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea class="form-control" name="firma" id="firma" rows="10"
+                                      readonly></textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-5 copy-btn">
+                            <button id="sign-btn" type="button" class="btn btn-success">Firmar mensaje</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script type="text/javascript" src="./public/js/aplicacion.js"></script>
+        <script type="text/javascript" src="./public/js/firma.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/jsrsasign-latest-all-min.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsapem-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsasign-1.2.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/asn1hex-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/x509-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/crypto-1.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            $().ready(function () {
+                var $clavePrivada      = $("#clavePrivadaConsultada");
+                var $algoritmo         = $("#algoritmo");
+                var $mensaje           = $("#mensaje");
+                var $errorHashing      = $("#errorHashing");
+                var $errorMensaje      = $("#errorMensaje");
+                var $errorClavePrivada = $("#errorClavePrivada");
+
+
+                $("#sign-btn").click(function (e) {
+                    var hayErrores = false;
+                    var clavePrivada = $clavePrivada.val();
+                    var algoritmo = $algoritmo.val();
+                    var mensaje = $mensaje.val();
+
+                    if(algoritmo == "#"){
+                        $errorHashing.show();
+                        hayErrores = true;
+                        $("html, body").animate({scrollTop:"0px"});
+                    }else{
+                        $errorHashing.hide();
+                    }
+                    if(clavePrivada.length == 0){
+                        $errorClavePrivada.show();
+                        hayErrores = true;
+                        $("html, body").animate({scrollTop:"50px"});
+                    }else{
+                        $errorClavePrivada.hide();
+                    }
+                    if(mensaje.length == 0){
+                        $errorMensaje.show();
+                        hayErrores = true;
+                        $("html, body").animate({scrollTop:"50px"});
+                    }else{
+                        $errorMensaje.hide();
+                    }
+                    if(!hayErrores){
+                        try{
+                            var firma = firmar(clavePrivada, algoritmo, mensaje);
+                            $("#firma").val(firma);
+                        }catch(err){
+                            console.log(err);
+                            alert("Error en la firma del mensaje");
+                            return;
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

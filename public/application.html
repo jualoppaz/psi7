@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="claves">
+    <head>
+        <meta charset="utf-8">
+        <title>Aplicacion</title>
+
+        <link rel="stylesheet" href="./public/css/bootstrap.css">
+        <link rel="stylesheet" href="./public/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="./public/css/jmlp.css">
+    </head>
+    <body ng-controller="mainController">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">Practica 7</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Aplicaci&oacute;n</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container containerApp">
+            <div class="col-md-12">
+                <h1 class="title">Generaci&oacute;n de claves</h1>
+                <form class="form-horizontal" role="form">
+                    <!--<div class="form-group">
+                        <label for="algoritmo" class="lead col-md-3 control-label">Algoritmo de hashing: </label>
+                        <div class="col-md-4">
+                            <select id="algoritmo" name="algoritmo" class="form-control">
+                                <option value="#">Seleccione un algoritmo</option>
+                                <option value="SHA1withRSA">SHA1withRSA</option>
+                                <option value="SHA256withRSA">SHA256withRSA</option>
+                                <option value="MD2withRSA">MD2withRSA</option>
+                                <option value="MD5withRSA">MD5withRSA</option>
+                            </select>
+                        </div>
+                        <div id="errorHashing" style="display: none">
+                            <p style="color:red;">Debe seleccionar un algoritmo de hashing</p>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="tamanoClave" class="lead col-md-3 control-label" >Tamaño de clave: </label>
+                        <div class="col-md-4">
+                            <select id="tamanoClave" name="tamanoClave" class="form-control">
+                                <option value="#">Seleccione un tamaño</option>
+                                <option value="512">512</option>
+                                <option value="1024">1024</option>
+                                <option value="2048">2048</option>
+                            </select>
+                        </div>
+                        <div id="errorTamanoClave" style="display: none">
+                            <p style="color:red;">Debe seleccionar un tamaño de clave</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 generate-button-group">
+                            <a id="generate-btn" type="button" class="btn btn-success">Generar</a>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <label class="lead col-md-4 control-label" for="clavePrivada">Clave privada: </label>
+                        <label class="lead col-md-4 control-label" for="clavePublica">Clave p&uacute;blica: </label>
+                        <div class="col-md-4 space">
+                            <textarea class="form-control" name="name_clavePrivada" id="clavePrivada" rows="10" readonly></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <textarea class="form-control" name="name_clavePublica" id="clavePublica" rows="10" readonly></textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-5 copy-btn">
+                            <a id="copy-btn" type="button" class="btn btn-success">Copiar clave</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container containerApp">
+            <div class="col-md-12">
+                <h1 class="title">Firma</h1>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="algoritmo" class="lead col-md-3 control-label">Algoritmo de hashing: </label>
+                        <div class="col-md-4">
+                            <select id="algoritmo" name="algoritmo" class="form-control">
+                                <option value="#">Seleccione un algoritmo</option>
+                                <option value="SHA1withRSA">SHA1withRSA</option>
+                                <option value="SHA256withRSA">SHA256withRSA</option>
+                                <option value="MD2withRSA">MD2withRSA</option>
+                                <option value="MD5withRSA">MD5withRSA</option>
+                            </select>
+                        </div>
+                        <div id="errorHashingFirma" style="display: none">
+                            <p style="color:red;">Debe seleccionar un algoritmo de hashing</p>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="tamanoClaveFirma" class="lead col-md-3 control-label" >Tamaño de clave usado: </label>
+                        <div class="col-md-4">
+                            <select id="tamanoClaveFirma" name="tamanoClaveFirma" class="form-control">
+                                <option value="#">Seleccione un tamaño</option>
+                                <option value="512">512</option>
+                                <option value="1024">1024</option>
+                                <option value="2048">2048</option>
+                            </select>
+                        </div>
+                        <div id="errorTamanoClaveFirma" style="display: none">
+                            <p style="color:red;">Debe seleccionar un tamaño de clave</p>
+                        </div>
+                    </div>-->
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <label for="clavePrivadaFirma" class="lead col-md-4 control-label">Clave privada: </label>
+                        <label for="mensaje" class="lead col-md-4 control-label">Mensaje: </label>
+                        <label for="firma" class="lead col-md-4 control-label">Firma: </label>
+                        <div class="col-md-3-4 space">
+                            <textarea class="form-control" name="clavePrivadaFirma" id="clavePrivadaFirma" rows="10"
+                                      placeholder="Introduzca la clave privada" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea class="form-control" name="mensaje" id="mensaje" rows="10"
+                                      placeholder="Introduzca el mensaje a firmar" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea class="form-control" name="firma" id="firma" rows="10"
+                                      readonly></textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-5 copy-btn">
+                            <button id="sign-btn" type="button" class="btn btn-success">Firmar mensaje</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container containerApp">
+            <div class="col-md-12">
+                <h1 class="title">Verificacion</h1>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="algoritmo" class="lead col-md-3 control-label">Algoritmo de hashing: </label>
+                        <div class="col-md-4">
+                            <select id="algoritmo" name="algoritmo" class="form-control">
+                                <option value="#">Seleccione un algoritmo</option>
+                                <option value="SHA1withRSA">SHA1withRSA</option>
+                                <option value="SHA256withRSA">SHA256withRSA</option>
+                                <option value="MD2withRSA">MD2withRSA</option>
+                                <option value="MD5withRSA">MD5withRSA</option>
+                            </select>
+                        </div>
+                        <div id="errorHashingFirma" style="display: none">
+                            <p style="color:red;">Debe seleccionar un algoritmo de hashing</p>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="tamanoClaveFirma" class="lead col-md-3 control-label" >Tamaño de clave usado: </label>
+                        <div class="col-md-4">
+                            <select id="tamanoClaveFirma" name="tamanoClaveFirma" class="form-control">
+                                <option value="#">Seleccione un tamaño</option>
+                                <option value="512">512</option>
+                                <option value="1024">1024</option>
+                                <option value="2048">2048</option>
+                            </select>
+                        </div>
+                        <div id="errorTamanoClaveFirma" style="display: none">
+                            <p style="color:red;">Debe seleccionar un tamaño de clave</p>
+                        </div>
+                    </div>-->
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group claves">
+                        <label for="clavePrivadaFirma" class="lead col-md-4 control-label">Clave privada: </label>
+                        <label for="mensaje" class="lead col-md-4 control-label">Mensaje: </label>
+                        <label for="firma" class="lead col-md-4 control-label">Firma: </label>
+                        <div class="col-md-3-4 space">
+                            <textarea class="form-control" name="clavePrivadaFirma" id="clavePrivadaFirma" rows="10"
+                                      placeholder="Introduzca la clave privada" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea class="form-control" name="mensaje" id="mensaje" rows="10"
+                                      placeholder="Introduzca el mensaje a firmar" required="required"></textarea>
+                        </div>
+                        <div class="col-md-3-4">
+                            <textarea class="form-control" name="firma" id="firma" rows="10"
+                                      readonly></textarea>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-5 copy-btn">
+                            <button id="sign-btn" type="button" class="btn btn-success">Firmar mensaje</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="./public/js/aplicacion.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/jsrsasign-latest-all-min.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsapem-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/rsasign-1.2.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/asn1hex-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/x509-1.1.js"></script>
+        <script type="text/javascript" src="./public/js/jsrsasign/crypto-1.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="main.js"></script>
+        <script>
+            $().ready(function () {
+                var $clavePrivada     = $("#clavePrivada");
+                var $clavePublica     = $("#clavePublica");
+                var $algoritmo        = $("#algoritmo");
+                var $tamanoClave      = $("#tamanoClave");
+                //var $errorHashing     = $("#errorHashing");
+                var $errorTamanoClave = $("#errorTamanoClave");
+
+                $(".generate-button-group .btn").click(function (e) {
+                    var algoritmo   = $algoritmo.val();
+                    var tamanoClave = $tamanoClave.val();
+
+                    /*if (algoritmo == "#"){
+                        $errorHashing.show();
+                    }else{
+                        $errorHashing.hide();
+                    }*/
+                    if(tamanoClave == "#"){
+                        $errorTamanoClave.show();
+                    }else{
+                        $errorTamanoClave.hide();
+                    }
+                    if (/*algoritmo != "#" && */tamanoClave != "#"){
+                        var claves = generarClave(tamanoClave);
+                        $clavePrivada.val(claves.privateKey);
+                        $clavePublica.val(claves.publicKey);
+                        $("#results").show();
+                    }
+                });
+
+                $(".copy-btn .btn").click(function(e){
+                    var $clavePrivada      = $("#clavePrivada");
+                    var $clavePrivadaFirma = $("#clavePrivadaFirma");
+                    $clavePrivadaFirma.val($clavePrivada.val());
+                });
+
+                $("#sign-btn").click(function (e) {
+                    var clavePrivada = $("#clavePrivada").val();
+                    var algoritmo = $("#algoritmo").val();
+                    var mensaje = $("#mensaje").val();
+
+                    try{
+                        var firma = firmar(clavePrivada, algoritmo, mensaje)
+                    }catch(err){
+                        console.log(err);
+                        alert("Error");
+                        return;
+                    }
+                    // Show result
+                    $("#firma").val(firma); //linebrk(hSig, 64)
+                });
+            });
+        </script>
+    </body>
+</html>
