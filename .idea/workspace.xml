@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ae5ddd2-f5ad-4894-acd3-7b4a4f6bb145" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/firma.html" afterPath="$PROJECT_DIR$/public/firma.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/generacionDeClaves.html" afterPath="$PROJECT_DIR$/public/generacionDeClaves.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/verificacion.html" afterPath="$PROJECT_DIR$/public/verificacion.html" />
     </list>
     <ignored path="psi7.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,12 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="generacionDeClaves.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/generacionDeClaves.html">
+      <file leaf-file-name="verificacion.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/verificacion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="78" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.45945945" vertical-offset="340" max-vertical-offset="2278">
+            <state line="4" column="34" selection-start="124" selection-end="124" vertical-scroll-proportion="0.122522525" vertical-offset="0" max-vertical-offset="2346">
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,11 +70,11 @@
         <option value="$PROJECT_DIR$/public/js/firma.js" />
         <option value="$PROJECT_DIR$/public/js/verificacion.js" />
         <option value="$PROJECT_DIR$/public/js/generacionDeClaves.js" />
-        <option value="$PROJECT_DIR$/public/verificacion.html" />
-        <option value="$PROJECT_DIR$/public/firma.html" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/generacionDeClaves.html" />
+        <option value="$PROJECT_DIR$/public/firma.html" />
+        <option value="$PROJECT_DIR$/public/verificacion.html" />
       </list>
     </option>
   </component>
@@ -318,7 +326,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/verificacion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="54" selection-start="7230" selection-end="7230" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2210" />
+        <state line="97" column="54" selection-start="7230" selection-end="7230" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2210">
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/verificacion.js">
@@ -565,37 +584,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/verificacion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="52" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.64324325" vertical-offset="204" max-vertical-offset="2346" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1114" column="11" selection-start="17165" selection-end="17173" vertical-scroll-proportion="32.595524" vertical-offset="0" max-vertical-offset="98447" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="106" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.47207206" vertical-offset="469" max-vertical-offset="1037">
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#p#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/generacionDeClaves.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/firma.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="52" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.45945945" vertical-offset="306" max-vertical-offset="2839">
           <folding />
         </state>
       </provider>
@@ -607,11 +603,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="106" selection-start="2489" selection-end="2489" vertical-scroll-proportion="-28.115385" vertical-offset="0" max-vertical-offset="1037">
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/generacionDeClaves.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="78" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.45945945" vertical-offset="340" max-vertical-offset="2278">
+        <state line="4" column="42" selection-start="132" selection-end="132" vertical-scroll-proportion="0.122522525" vertical-offset="0" max-vertical-offset="2278">
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/firma.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="20" selection-start="110" selection-end="110" vertical-scroll-proportion="0.122522525" vertical-offset="0" max-vertical-offset="2839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/verificacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="34" selection-start="124" selection-end="124" vertical-scroll-proportion="0.122522525" vertical-offset="0" max-vertical-offset="2346">
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
