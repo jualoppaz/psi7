@@ -1,6 +1,6 @@
 ##Español
 
-Puedes probar la aplicación en: <a href="http://psi7.herokuapp.com" target="_blank">http://psi7.herokuapp.com</a>
+Puedes probar la aplicación en: http://psi7.herokuapp.com
 
 ###Justificación
 Este proyecto surge como trabajo para la asignatura "Seguridad en Sistemas Informáticos y en Internet" del Grado en Ingeniería Informática - Ingeniería del Software de la Universidad de Sevilla.
@@ -53,11 +53,11 @@ El proyecto está estructurado de la siguiente forma:
 	
 _____________________________________________________________________________________________
 
-@ Juan Manuel López Pazos, 2014
+Juan Manuel López Pazos, 2014
 
 ##English
 
-You can try the app in: <a href="http://psi7.herokuapp.com" target="_blank">http://psi7.herokuapp.com</a>
+You can try the app in: http://psi7.herokuapp.com
 
 ###Justification
 This project was born as a deliverable for the "Seguridad en Sistemas Informáticos y en Internet" subject in "Grado en Ingeniería Informática - Ingeniería del Software" offered by Universidad de Sevilla.
@@ -110,4 +110,4 @@ The project is structured as follows:
 
 _____________________________________________________________________________________________
 
-@ Juan Manuel López Pazos, 2014
+Juan Manuel López Pazos, 2014
